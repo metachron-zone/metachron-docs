@@ -1,7 +1,12 @@
 import React from 'react';
 import { Button } from '../components/Button';
+import { Helmet } from 'react-helmet-async';
 export function About() {
   return <div className="min-h-screen bg-[#0B0F19] text-gray-100">
+    <Helmet>
+      <title>关于我们 - METACHRON</title>
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    </Helmet>
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">关于我们</h1>

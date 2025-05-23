@@ -1,4 +1,5 @@
-import React from 'react';
+import { Bot } from 'lucide-react';
+import { Link } from 'react-router-dom';
 export function Footer() {
   return <footer className="bg-[#0A0E17] border-t border-gray-800 py-12">
       <div className="container mx-auto px-4">
@@ -6,49 +7,38 @@ export function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 rounded bg-[#00B5AD] flex items-center justify-center mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <rect width="18" height="18" x="3" y="3" rx="2" />
-                  <path d="M7 7h.01" />
-                  <path d="M12 7h.01" />
-                  <path d="M17 7h.01" />
-                  <path d="M7 12h.01" />
-                  <path d="M12 12h.01" />
-                  <path d="M17 12h.01" />
-                  <path d="M7 17h.01" />
-                  <path d="M12 17h.01" />
-                  <path d="M17 17h.01" />
-                </svg>
+                <Bot size={20} className="text-[#0d121f]" />
               </div>
               <span className="text-[#00B5AD] font-bold text-xl">
                 METACHRON
               </span>
             </div>
             <p className="text-gray-500 text-sm">
-              智能 Agent 创建与管理平台，释放 AI 的无限可能
+              智能体即服务平台，释放 AI 的无限可能
             </p>
           </div>
           <div>
             <h4 className="font-medium mb-4">产品</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
-                  Agent 工坊
-                </a>
+                <Link to="/features" className="hover:text-[#00B5AD]">
+                  智能体工坊
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/features" className="hover:text-[#00B5AD]">
                   优化引擎
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/ecosystem" className="hover:text-[#00B5AD]">
                   生态市场
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/pricing" className="hover:text-[#00B5AD]">
                   企业方案
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -81,9 +71,9 @@ export function Footer() {
             <h4 className="font-medium mb-4">公司</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/about" className="hover:text-[#00B5AD]">
                   关于我们
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-[#00B5AD]">
@@ -91,14 +81,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/contact" className="hover:text-[#00B5AD]">
                   联系我们
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-[#00B5AD]">
+                <Link to="/hiring" className="hover:text-[#00B5AD]">
                   招贤纳士
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

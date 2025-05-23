@@ -11,6 +11,7 @@ import { Pricing } from './pages/Pricing';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Hiring } from './pages/Hiring';
+import { Helmet } from 'react-helmet-async';
 export function App() {
   return <Router>
       <div className="bg-[#0B0F19] min-h-screen text-gray-100 flex flex-col">
@@ -18,10 +19,14 @@ export function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<>
-                  <HeroSection />
-                  <FeatureSection />
-                  <CTASection />
-                </>} />
+              <Helmet>
+                <title>METACHRON - 智能Agent开发平台</title>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+              </Helmet>
+              <HeroSection />
+              <FeatureSection />
+              <CTASection />
+            </>} />
             <Route path="/features" element={<Features />} />
             <Route path="/ecosystem" element={<Ecosystem />} />
             <Route path="/pricing" element={<Pricing />} />
