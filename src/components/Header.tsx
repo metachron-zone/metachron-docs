@@ -90,7 +90,7 @@ export function Header() {
   }, [showMenu]);
 
   return <>
-      <header className="border-b border-gray-800 bg-[#0B0F19] relative overflow-hidden">
+      <header className="fixed top-0 left-0 w-full border-b border-gray-800 bg-[#0B0F19] z-[9999]">
         <div className="absolute left-0 bottom-0 w-full h-0.5 pointer-events-none">
           <div className="h-full w-full animate-glow-gradient bg-gradient-to-r from-[#00B5AD] via-[#00B5AD]/40 to-transparent opacity-40" />
         </div>
@@ -123,7 +123,7 @@ export function Header() {
                 <Avatar src={userAvatar} />
               </div>
               {showMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-[#151A2D] border border-gray-800 rounded-lg shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-[#151A2D] border border-gray-800 rounded-lg shadow-lg z-9999">
                   {!isLoggedIn ? (
                     <button className="w-full text-left px-4 py-2 text-gray-300 hover:bg-[#222c3a] transition-colors" onClick={() => { setIsLoginModalOpen(true); setShowMenu(false); }}>登录</button>
                   ) : <>

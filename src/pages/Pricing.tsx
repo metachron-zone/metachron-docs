@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { Check } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { plans } from '../constants/pricing';
+import { plans, functionalTable, keyMap } from '../constants/pricing';
+import { OrderModal } from '../components/OrderModal';
 
 export function Pricing() {
+  const [orderOpen, setOrderOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: number | string } | null>(null);
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+
+  // 获取某个plan的功能列表
+  function getPlanFeatures(planName: string): string[] {
+    const col = keyMap[planName] || 'free';
+    return functionalTable.filter((row: { name: string; free: string; basic: string; professional: string; enterprise: string }) => row[col] && row[col] !== '—').map((row: { name: string; free: string; basic: string; professional: string; enterprise: string }) => row.name + (row[col] === '✔️' ? '' : `：${row[col]}`));
+  }
+
   return <div className="min-h-screen bg-[#0B0F19] text-gray-100">
     <Helmet>
       <title>价格方案 - METACHRON</title>
@@ -30,7 +41,7 @@ export function Pricing() {
                 </div>}
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-                <div className="text-3xl font-bold mb-4">{plan.price}</div>
+                <div className="text-3xl font-bold mb-4">{typeof plan.price === 'number' ? `￥${plan.price}/月` : plan.price}</div>
               </div>
               <div className="flex gap-6 mb-8 flex-1">
                 <ul className="space-y-4 flex-1">
@@ -47,13 +58,47 @@ export function Pricing() {
                 </ul>}
               </div>
               <div className="mt-auto">
-              <Button variant={plan.featured ? 'default' : 'outline'} className="w-full">
+              <Button
+                variant={plan.featured ? 'default' : 'outline'}
+                className="w-full"
+                onClick={() => {
+                  if (typeof plan.price === 'string') {
+                    setSelectedPlan(plan);
+                    setSelectedFeatures(getPlanFeatures(plan.name));
+                    setOrderOpen(true);
+                  }
+                }}
+              >
                 {plan.price === '联系销售' ? '联系我们' : '立即开始'}
               </Button>
               </div>
             </div>
           );
         })}
+        </div>
+        <div className="overflow-x-auto mb-12">
+          <table className="min-w-full border border-gray-800 rounded-lg bg-[#151A2D] text-center">
+            <thead>
+              <tr>
+                <th className="px-4 py-3 border-b border-gray-700 text-lg font-bold text-white bg-[#181F2D]">功能</th>
+                <th className="px-4 py-3 border-b border-gray-700 text-lg font-bold text-[#00B5AD] bg-[#181F2D]">7天试用版</th>
+                <th className="px-4 py-3 border-b border-gray-700 text-lg font-bold text-[#00B5AD] bg-[#181F2D]">基础版</th>
+                <th className="px-4 py-3 border-b border-gray-700 text-lg font-bold text-[#00B5AD] bg-[#181F2D]">专业版</th>
+                <th className="px-4 py-3 border-b border-gray-700 text-lg font-bold text-[#00B5AD] bg-[#181F2D]">企业版</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-200">
+              {functionalTable.map((item, index) => (
+                <tr key={index}>
+                  <td className="px-4 py-3 border-b border-gray-800">{item.name}</td>
+                  <td className="px-4 py-3 border-b border-gray-800">{item.free}</td>
+                  <td className="px-4 py-3 border-b border-gray-800">{item.basic}</td>
+                  <td className="px-4 py-3 border-b border-gray-800">{item.professional}</td>
+                  <td className="px-4 py-3 border-b border-gray-800">{item.enterprise}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div className="bg-[#151A2D] border border-gray-800 rounded-lg p-8 md:p-12 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
@@ -65,5 +110,6 @@ export function Pricing() {
           <Button size="lg">预约咨询</Button>
         </div>
       </div>
+      <OrderModal open={orderOpen} onClose={() => setOrderOpen(false)} plan={selectedPlan} features={selectedFeatures} />
     </div>;
 }

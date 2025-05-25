@@ -12,7 +12,7 @@ export function About() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">关于我们</h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            深圳异时网络科技致力于打造新一代智能Agent开发与管理平台
+            深圳异时网络科技致力于打造新一代智能体开发与管理平台
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 mb-20">
