@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { vercelUrl } from '@/lib/vercel';
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -27,6 +28,9 @@ export function LoginModal({
   async function signInWithGitHub() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
+      options: {
+        redirectTo: vercelUrl
+      }
     })
     if (error) {
       console.error(error);
