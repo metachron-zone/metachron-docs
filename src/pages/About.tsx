@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 export function About() {
   return <div className="min-h-screen bg-[#0B0F19] text-gray-100">
     <Helmet>
@@ -79,7 +80,9 @@ export function About() {
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             我们正在寻找优秀的人才加入团队，一起打造下一代AI开发平台
           </p>
-          <Button size="lg">查看职位</Button>
+          <Button size="lg">
+            <Link to="/hiring">查看职位</Link>
+          </Button>
         </div>
       </div>
     </div>;

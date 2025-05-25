@@ -12,6 +12,8 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Hiring } from './pages/Hiring';
 import { Helmet } from 'react-helmet-async';
+import { ChatAgent } from './components/ChatAgent';
+import './assets/css/ChatAgent.css';
 export function App() {
   return <Router>
       <div className="bg-[#0B0F19] min-h-screen text-gray-100 flex flex-col">
@@ -36,6 +38,7 @@ export function App() {
           </Routes>
         </main>
         <Footer />
+        <ChatAgent />
       </div>
     </Router>;
 }

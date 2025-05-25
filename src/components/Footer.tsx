@@ -1,7 +1,10 @@
 import { Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 export function Footer() {
-  return <footer className="bg-[#0A0E17] border-t border-gray-800 py-12">
+  return <footer className="bg-[#0A0E17] border-t border-gray-800 py-12 relative overflow-hidden">
+      <div className="absolute left-0 top-0 w-full h-0.5 pointer-events-none">
+        <div className="h-full w-full animate-glow-gradient bg-gradient-to-r from-[#00B5AD] via-[#00B5AD]/40 to-transparent opacity-40" />
+      </div>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div>

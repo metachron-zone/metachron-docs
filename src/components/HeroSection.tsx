@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
+import { MatrixRain } from './MatrixRain';
 export function HeroSection() {
   const [show, setShow] = useState(false);
   const [imgShow, setImgShow] = useState(false);
@@ -8,6 +9,7 @@ export function HeroSection() {
     setTimeout(() => setImgShow(true), 50);
   }, []);
   return <section className="min-h-screen py-20 flex flex-col justify-center relative overflow-hidden">
+      <MatrixRain />
       <div className="absolute inset-0 bg-[#0B0F19] z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#00B5AD]/10 via-transparent to-transparent" />
         <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-[#00B5AD]/10 rounded-full blur-3xl" />
