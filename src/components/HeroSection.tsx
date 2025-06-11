@@ -17,7 +17,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-20 flex-1 flex flex-col justify-center">
         <div className={`mx-auto text-center mb-12 transition-all duration-700 ease-out ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-            智能体即服务
+            生成式智能体即服务
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8">
             METACHRON 让您轻松构建、优化和部署智能体，释放 AI 的无限可能

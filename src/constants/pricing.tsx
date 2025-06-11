@@ -1,16 +1,16 @@
 export const plans = [{
     name: '基础版',
-    price: '￥99/月',
-    features: ['100个Agent额度', '完整组件库访问', 'API调用', '监控和优化']
+    price: '￥50/月',
+    features: ['100个Agent额度', '完整组件库访问', 'API调用', '监控和优化', '云原生IDE']
   }, {
     name: '专业版',
-    price: '￥999/月',
+    price: '￥200/月',
     featured: true,
-    features: ['1000个Agent额度', '完整组件库访问', 'API调用', '监控和优化', '团队协作功能', '自定义集成接口', '智能辅助调试', '智能数据分析']
+    features: ['500个Agent额度', '完整组件库访问', 'API调用', '监控和优化', '云原生IDE', '团队协作功能', '自定义集成接口', '智能数据分析']
   }, {
     name: '企业版',
     price: '联系销售',
-    features: ['无限Agent额度', '完整组件库访问', 'API调用', '监控和优化', '团队协作功能', '自定义集成接口', '智能辅助调试', '智能数据分析', '智能故障分析运维', '专属训练资源', '专属数据隔离', 'SLA保障']
+    features: ['无限Agent额度', '完整组件库访问', 'API调用', '监控和优化', '云原生IDE', '团队协作功能', '自定义集成接口',  '智能数据分析', '智能故障分析运维', '专属训练资源', '专属数据隔离', 'SLA保障']
   }];
 
   export const functionalTable = [
@@ -18,11 +18,18 @@ export const plans = [{
       name: 'Agent额度',
       free: '5',
       basic: '100',
-      professional: '1000',
+      professional: '500',
       enterprise: '不限'
     },
     {
       name: '组件库访问',
+      free: '✔️',
+      basic: '✔️',
+      professional: '✔️',
+      enterprise: '✔️'
+    },
+    {
+      name: '云原生IDE',
       free: '✔️',
       basic: '✔️',
       professional: '✔️',
@@ -44,13 +51,6 @@ export const plans = [{
     },
     {
       name: '团队协作',
-      free: '—',
-      basic: '—',
-      professional: '✔️',
-      enterprise: '✔️'
-    },
-    {
-      name: '智能辅助调试',
       free: '—',
       basic: '—',
       professional: '✔️',

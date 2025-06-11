@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-gray-500 text-sm">
-              智能体即服务平台，释放 AI 的无限可能
+              生成式智能体即服务平台，释放 AI 的无限可能
             </p>
           </div>
           <div>

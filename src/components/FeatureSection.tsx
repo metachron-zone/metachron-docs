@@ -13,11 +13,11 @@ export function FeatureSection() {
               核心功能模块
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              METACHRON 提供全方位的智能体开发与管理解决方案，从创建到优化，再到生态协作
+              METACHRON 提供生成式智能体开发与管理解决方案，从创建到优化，再到生态协作
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <FeatureCard icon={<Bot className="w-10 h-10 text-[#00B5AD]" />} title="智能体工坊" description="通过自然语言描述需求，自动生成技术规格文档，组件智能装配系统结合预置工具库自动匹配最佳方案" image="/agent_workshop.png" />
+            <FeatureCard icon={<Bot className="w-10 h-10 text-[#00B5AD]" />} title="智能云IDE" description="氛围编码和智能体工坊，支持多语言、多框架、实时团队协作编辑" image="/agentIDE.png" />
             <FeatureCard icon={<LineChart className="w-10 h-10 text-[#00B5AD]" />} title="自适应优化引擎" description="动态性能调优器监控 Agent 运行时资源消耗，推荐优化策略，通过用户反馈数据自动生成强化学习奖励函数" image="/optimization_demo.png" />
             <FeatureCard icon={<Users className="w-10 h-10 text-[#00B5AD]" />} title="生态协作体系" description="MCP组件市场建立标准化工具组件交易平台，Agent共享社区提供模板的版本管理、分叉协作功能" image="/ecosystem_hub_demo.png" />
           </div>

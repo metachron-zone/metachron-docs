@@ -62,10 +62,14 @@ export function Pricing() {
                 variant={plan.featured ? 'default' : 'outline'}
                 className="w-full"
                 onClick={() => {
-                  if (typeof plan.price === 'string') {
-                    setSelectedPlan(plan);
-                    setSelectedFeatures(getPlanFeatures(plan.name));
-                    setOrderOpen(true);
+                  if (typeof plan.price == 'string') {
+                    if (plan.price !== '联系销售') {
+                      setSelectedPlan(plan);
+                      setSelectedFeatures(getPlanFeatures(plan.name));
+                      setOrderOpen(true);
+                    } else {
+                      window.open('https://metachron.zone/contact', '_blank');
+                    }
                   }
                 }}
               >
