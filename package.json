@@ -1,5 +1,5 @@
 {
-  "name": "metachron-docs",
+  "name": "@metachron-web/docs",
   "version": "0.0.1",
   "private": true,
   "type": "module",
